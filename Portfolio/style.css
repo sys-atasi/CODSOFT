@@ -1,0 +1,226 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #69a6ce;
+    font-family: 'Poooins',sans-serif;
+}
+header{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;/*for centering purpose*/
+    justify-content: center;/*for center*/
+    align-items: center; /*for center*/
+    flex-direction: column; /*to move the text down to the photo*/
+}
+header img{
+    width: 10rem;
+    height: auto;
+    border-radius: 50%;
+    animation: move 1s infinite;/*for animation move is animation name*/
+}
+@keyframes move {/*for animations*/
+    0%{/*when animation starts or end then set the box shadow and when it end add 30px blur to box-shadow*/
+        box-shadow: 0 0 0 0px rgba(0,0,0,0.5);
+    }
+    100%{
+        box-shadow: 0 0 0 30px rgba(0,0,0,0);
+    }
+}
+header h3{
+    font-size: 20px;
+    color: white;
+    margin: 1.5rem 0;/*from top and botton margin 1.5rem and left and right 0*/
+    letter-spacing: 0.2rem;/*so they have space between the letters*/
+    font-size: 1.5rem;
+}
+header p{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 0.1rem;
+}
+.arrow{
+    color: white;
+    margin-top: 5rem;/*so that it will move little bit down*/
+    font-size: 5rem;
+    animation: arrow 2s ease-in-out infinite;
+    
+}
+@keyframes arrow {
+    0%{
+        color: #080808;
+    }
+    50%{
+        color: #0e0e0f;
+    }
+    100%{
+        color: #ffffff;
+    }
+    
+}
+.container{
+    font-size: 20px;
+    width: 100%;
+    min-height: 150vh;/*vh--view port height*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;/*fr-fractional unit*/
+    grid-template-rows: 1fr 1fr 0.8fr 0.2fr;
+    gap: 1rem;
+    grid-template-areas: "profile profile skills skills"
+                         "edu edu edu lang"
+                         "contact exp exp exp"
+                         "footer footer footer footer";
+    padding: 2rem;;
+}
+.profile{
+    
+    background: white;
+    color: black;
+    padding: 2rem;
+    grid-area: profile;
+}
+.skills{
+    background: #3c6382;
+    color: white;
+    padding: 2rem;
+    grid-area: skills;
+}
+.edu{
+    background: #3c6382;
+    color: white;
+    padding: 2rem;
+    grid-area: edu;
+}
+
+.lang{
+    background: white;
+    color: #0a3d62;
+    padding: 2rem;
+    grid-area: lang;
+}
+.contact{
+    background: rgb(255, 255, 255);
+    color: #0a3d62;
+    padding: 2rem;
+    grid-area: contact;
+}
+.achieve{
+    font-size: 20px;
+    background: #3c6382;
+    color: white;
+    padding: 2rem;
+    grid-area: exp;
+}
+footer{
+    background: #3c6382;
+    color: rgb(247, 250, 250);
+    padding: 2rem;
+    grid-area: footer;
+}
+h2{
+    margin-bottom: 1rem;
+}
+.profile p{
+    font-size: 20px;
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    line-height: 2.2rem;
+
+}
+.profile a{
+    text-decoration: none;
+    color: rgb(254, 255, 255);
+    background: #0a3d62;
+    padding: 0.5rem 0.7rem;
+}
+.skills div{
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+.skills div progress[value]{
+    width: 100%;
+    height: 1rem;
+}
+.edu h2{
+    letter-spacing: 0.1rem;
+}
+.edu p{
+    font-size: 20px;
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    line-height: 2.2rem;
+}
+.edu a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background: #ffffff;
+    padding: 0.5rem 0.7rem;
+    font-weight: bold;
+}
+.lang ul{
+    margin: 1rem 0;
+    padding:  0.3rem 1rem;
+    
+}
+.lang ul li{
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #080808;
+    font-weight: bold;
+}
+.lang h4{
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+}
+.contact div i{
+    margin-right: 0.3rem;
+}
+.contact p{
+    font-size: 20px;
+    margin: 1rem 0;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.achieve p{
+    padding: 0.3rem 1rem;
+    text-align: justify;
+    line-height: 2.2rem;
+}
+footer i{
+    background: white;
+    color: black;
+    padding: 0.5rem;
+    margin: 1rem 0.2rem;
+    border-radius: 50%;
+    transition: 0.4s;
+
+}
+footer i:hover{
+    background: #0a3d62;
+    color: white;
+    cursor: pointer;
+}
+footer{
+    text-align: center;
+}
+@media only screen and (max-width:770px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.6fr 1fr 0.6fr 0.5fr 0.8fr 0.1fr;
+        grid-template-areas: 
+        "profile"
+        "skills"
+        "edu"
+        "lang"
+        "contact"
+        "achieve"
+        "footer";
+    }
+
+}
